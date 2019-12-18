@@ -1,0 +1,41 @@
+.flexForm {
+	display: flex;
+	flex-direction: column;
+	border: thin;
+}
+
+.tweet {
+	width: fit-content;
+}
+
+.tweets {
+  width: 850px;
+  height: 200px;
+  text-align: center;
+  border: solid black 2px;
+  margin: 0.5em;  
+}
+
+.tweets:hover{
+  font-weight: 600;
+  box-shadow: 5px 10px #888888;
+  opacity: 100;
+}
+
+.counter {
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	width: fit-content;
+	align-self: flex-end;
+}
+
+textarea {
+	flex: auto;
+	border-top: 0;
+	border-bottom-width: thick;
+	border-left: 0;
+	border-right: 0;
+	background: transparent;
+	width: 100%;
+}

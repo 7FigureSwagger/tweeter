@@ -1,0 +1,22 @@
+
+
+
+nav {
+  font-family: 'Bungee', cursive;
+  height: 120px;
+  width: 100%;
+  z-index: 1;
+  background-color: #4056A1;
+  color: #ffffff;
+}
+
+span {
+  font-family: 'Bungee', cursive;
+}
+
+
+.tweeter {
+  padding: 40px;
+  position: relative;
+  top: 40px;
+}
