@@ -1,3 +1,54 @@
+#nTweetTag {
+	color: violet;
+	margin:	.5em;
+}
+
+.tweets {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	width: 98%;
+	height: 200px;
+	text-align: center;
+	border: solid black 2px;
+	margin: 0.5em;  
+}
+
+.tweets:hover{
+	/* font-weight: 600; */
+	box-shadow: 5px 10px #888888;
+	opacity: 100;
+}
+
+.nTweetAvatar {
+	float: left;
+}
+
+.nTweetHeader {
+	/* float: right; */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.nTweetIcon {
+	display: none;
+}
+
+.tweets footer {
+	display: flex;
+	justify-content: space-between;
+}
+
+.nTweetUser {
+
+}
+
+#form {
+	display: none;
+}
+
+
 .flexForm {
 	display: flex;
 	flex-direction: column;
@@ -8,19 +59,6 @@
 	width: fit-content;
 }
 
-.tweets {
-  width: 850px;
-  height: 200px;
-  text-align: center;
-  border: solid black 2px;
-  margin: 0.5em;  
-}
-
-.tweets:hover{
-  font-weight: 600;
-  box-shadow: 5px 10px #888888;
-  opacity: 100;
-}
 
 .counter {
 	text-align: center;
@@ -39,3 +77,4 @@ textarea {
 	background: transparent;
 	width: 100%;
 }
+

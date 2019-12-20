@@ -2,6 +2,9 @@
 
 
 nav {
+  display: flex;
+  justify-content: space-between;
+
   font-family: 'Bungee', cursive;
   height: 120px;
   width: 100%;
@@ -16,7 +19,9 @@ span {
 
 
 .tweeter {
-  padding: 40px;
-  position: relative;
+  /* padding: 40px; */
+  color: whitesmoke;
+  font-size: 40px;
+  margin: .5em;
   top: 40px;
 }
