@@ -1,6 +1,10 @@
 #nTweetTag {
 	color: violet;
 	margin:	.5em;
+	border-radius: 10%;
+	height: 50px;
+	width: fit-content;
+	border: solid gray 2px;
 }
 
 .tweets {
@@ -20,8 +24,17 @@
 	opacity: 100;
 }
 
+.tweets:hover .nTweetIcon {
+	display: inline-block;
+	justify-content: space-between;
+}
+
 .nTweetAvatar {
 	float: left;
+}
+
+.nTweetIcon {
+	display: none;
 }
 
 .nTweetHeader {
@@ -31,9 +44,6 @@
 	justify-content: space-between;
 }
 
-.nTweetIcon {
-	display: none;
-}
 
 .tweets footer {
 	display: flex;

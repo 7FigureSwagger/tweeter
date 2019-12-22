@@ -9,35 +9,57 @@ $(document).ready(function() {
 		let tweet = {};
 	};
 
-	$(".flexForm").on("submit", function(event) {
-    event.preventDefault();
-    let text = $('#mainText').val();
+	$(".flexForm").submit(function(event) {
+		event.preventDefault();
+		let text = $("#mainText").val();
 		console.log("data", text);
-    
-    if (text.length > 140 || text === '') {
-      $('#error').slideToggle('fast').delay( 500 ).slideUp('fast');       
-    } else {
+
+		if (text.length > 140 || text === "") {
+			$("#error")
+				.slideToggle("fast")
+				.delay(500)
+				.slideUp("fast");
+		} else {
 			$.ajax({
 				url: "/tweets",
 				data: $(this).serialize(),
-				type: "POST",
-				dataType: "JSON"
-    })
-    .then(loadTweets());    
-    }
-  });
+				type: "POST"
+			})
+				.then(function() {
+					$("#mainText").val("");
+				})
+				.done(function() {
+					loadTweets();
+				})
+				.catch((_, text, err) => {
+					console.log("shittttt", text, err);
+				});
+		}
+	});
 
- 
+	const loadTweets = function() {
+		$.ajax({
+			url: "/tweets",
+			type: "GET"
+		}).then(data => {
+			console.log("tweet", data);
+			renderTweets(data);
+			// }).catch((err) => {
+			//   console.log(err)
+		});
+	};
 
-  const escape =  function(str) {
-    let div = document.createElement('div');
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  }
+	loadTweets();
 
-  const createTweetElement = function(tweet) {
-    let date = new Date(tweet.created_at).toDateString();
-    let heart = 'class=ui-icon-heart'
+	const escape = function(str) {
+		let div = document.createElement("div");
+		div.appendChild(document.createTextNode(str));
+		return div.innerHTML;
+	};
+
+	const createTweetElement = function(tweet) {
+		let date = new Date(tweet.created_at).toDateString();
+		let heart = "class=ui-icon-heart";
 		const $tweets = `
     <article class='tweets'>
       <header class='nTweetHeader'>
@@ -65,35 +87,26 @@ $(document).ready(function() {
 		// loops through tweets
 		// calls createTweetElement for each tweet
 		// takes return value and appends it to the tweets container
+		$(".tContainer").empty();
 		for (let x of tweets) {
 			let $tweet = createTweetElement(x);
 			$(".tContainer").prepend($tweet);
 		}
 	};
 
-	const loadTweets = function() {
-		$.ajax({
-			url: "/tweets",
-			type: "GET",
-			dataType: "JSON"
-		}).then(data => {
-      // console.log(data.reverse());
-      console.log('tweet', data);
-			renderTweets(data);
-		});
-	};
+	// loadTweets();
 
-	loadTweets();
+	$("#mainText").keyup(function(e) {
+		if (e.which === 13) $("#tweetButt").click();
+	});
 
-  $('#mainText').keyup(function(e){
-    if(e.which === 13)
-       $('#tweetButt').click();
-  });
-
-  $( "#nTweetTag" ).click(function() {
-    $( "#form" ).slideDown( "fast", function() {
-      $('#mainText').focus();
-    })
-  });
-  
+	$("#nTweetTag").click(function() {
+		if ($("#form").is(":visible")) {
+        $('#form').slideUp("fast", function() {});
+    } else {
+			$("#form").slideDown("fast", function() {
+				$("#mainText").focus();
+			});
+		}
+	});
 });
