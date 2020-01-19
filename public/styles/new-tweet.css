@@ -19,7 +19,6 @@
 }
 
 .tweets:hover{
-	/* font-weight: 600; */
 	box-shadow: 5px 10px #888888;
 	opacity: 100;
 }
@@ -38,26 +37,19 @@
 }
 
 .nTweetHeader {
-	/* float: right; */
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
-
 
 .tweets footer {
 	display: flex;
 	justify-content: space-between;
 }
 
-.nTweetUser {
-
-}
-
 #form {
 	display: none;
 }
-
 
 .flexForm {
 	display: flex;
@@ -68,7 +60,6 @@
 .tweet {
 	width: fit-content;
 }
-
 
 .counter {
 	text-align: center;
@@ -87,4 +78,3 @@ textarea {
 	background: transparent;
 	width: 100%;
 }
-

@@ -1,6 +1,4 @@
 
-
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -17,9 +15,7 @@ span {
   font-family: 'Bungee', cursive;
 }
 
-
 .tweeter {
-  /* padding: 40px; */
   color: whitesmoke;
   font-size: 40px;
   margin: .5em;

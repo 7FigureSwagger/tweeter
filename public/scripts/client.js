@@ -14,8 +14,13 @@ $(document).ready(function() {
 		let text = $("#mainText").val();
 		console.log("data", text);
 
-		if (text.length > 140 || text === "") {
-			$("#error")
+		if (text.length > 140) {
+			$("#error_char")
+				.slideToggle("fast")
+				.delay(500)
+				.slideUp("fast");
+		} else if (text === "") {
+			$("#error_empty")
 				.slideToggle("fast")
 				.delay(500)
 				.slideUp("fast");
@@ -44,8 +49,6 @@ $(document).ready(function() {
 		}).then(data => {
 			console.log("tweet", data);
 			renderTweets(data);
-			// }).catch((err) => {
-			//   console.log(err)
 		});
 	};
 
