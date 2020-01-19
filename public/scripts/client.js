@@ -49,14 +49,14 @@ $(document).ready(function() {
 	loadTweets();
 
 	const escape = function(str) {
-		let div = document.createElement("div");
+		const div = document.createElement("div");
 		div.appendChild(document.createTextNode(str));
 		return div.innerHTML;
 	};
 
 	const createTweetElement = function(tweet) {
-		let date = new Date(tweet.created_at).toDateString();
-		let heart = "class=ui-icon-heart";
+		const date = new Date(tweet.created_at).toDateString();
+		const heart = "class=ui-icon-heart";
 		const $tweets = `
     <article class='tweets'>
       <header class='nTweetHeader'>
@@ -86,7 +86,7 @@ $(document).ready(function() {
 		// takes return value and appends it to the tweets container
 		$(".tContainer").empty();
 		for (let x of tweets) {
-			let $tweet = createTweetElement(x);
+			const $tweet = createTweetElement(x);
 			$(".tContainer").prepend($tweet);
 		}
 	};

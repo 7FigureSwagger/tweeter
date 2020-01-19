@@ -71,10 +71,7 @@
 
 textarea {
 	flex: auto;
-	border-top: 0;
-	border-bottom-width: thick;
-	border-left: 0;
-	border-right: 0;
+	border-width: 0 0 thick 0;
 	background: transparent;
 	width: 100%;
 }
