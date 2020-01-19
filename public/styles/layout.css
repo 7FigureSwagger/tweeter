@@ -30,18 +30,18 @@ main {
 	background-color: #f4f1ec;
 }
 
-.ui-icon {}
-
+.ui-icon {
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- .main-container {
-	 display: flex;
- }
+.main-container {
+	display: flex;
+}
 
- @media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
 	.main-container {
 		flex-direction: column;
 	}
@@ -49,4 +49,4 @@ main {
 	.flex-container {
 		width: auto !important;
 	}
- }
+}

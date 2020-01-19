@@ -1,6 +1,6 @@
 #nTweetTag {
 	color: violet;
-	margin:	.5em;
+	margin: 0.5em;
 	border-radius: 10%;
 	height: 50px;
 	width: fit-content;
@@ -15,10 +15,10 @@
 	height: 200px;
 	text-align: center;
 	border: solid black 2px;
-	margin: 0.5em;  
+	margin: 0.5em;
 }
 
-.tweets:hover{
+.tweets:hover {
 	box-shadow: 5px 10px #888888;
 	opacity: 100;
 }

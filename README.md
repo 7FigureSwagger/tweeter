@@ -17,7 +17,7 @@ This repository is the starter code for the project: Students will fork and clon
 - Node 5.10.x or above
 - Body Parser 1.15.2 or above
 - Chance 1.0.2 or above
-- Express 4.13.3 or above
+- Express 4.13.3 or abovem
 - Jquery-ui 1.12.1 or above
 - md5 2.1.0 or above
 - Nodemon 2.0.2 or above
