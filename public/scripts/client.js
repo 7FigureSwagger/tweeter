@@ -5,14 +5,9 @@
  */
 
 $(document).ready(function() {
-	const getTweet = search => {
-		let tweet = {};
-	};
-
 	$(".flexForm").submit(function(event) {
 		event.preventDefault();
 		let text = $("#mainText").val();
-		console.log("data", text);
 
 		if (text.length > 140) {
 			$("#error_char")
@@ -47,7 +42,6 @@ $(document).ready(function() {
 			url: "/tweets",
 			type: "GET"
 		}).then(data => {
-			console.log("tweet", data);
 			renderTweets(data);
 		});
 	};
@@ -105,8 +99,8 @@ $(document).ready(function() {
 
 	$("#nTweetTag").click(function() {
 		if ($("#form").is(":visible")) {
-        $('#form').slideUp("fast", function() {});
-    } else {
+			$("#form").slideUp("fast", function() {});
+		} else {
 			$("#form").slideDown("fast", function() {
 				$("#mainText").focus();
 			});
